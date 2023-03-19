@@ -1,0 +1,26 @@
+{
+  "name": "unit_date",
+  "version": "0.1.0",
+  "description": "A unit base date library for Node.js, Deno and Browser.",
+  "keywords": [
+    "date",
+    "unit"
+  ],
+  "files": [
+    "LICENSE",
+    "unit_date.js",
+    "unit_date.d.ts"
+  ],
+  "module": "unit_date.js",
+  "typings": "unit_date.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itte1/unit_date.git"
+  },
+  "author": "Nakamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itte1/unit_date/issues"
+  },
+  "homepage": "https://github.com/itte1/unit_date#readme"
+}
