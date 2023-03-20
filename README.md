@@ -2,6 +2,30 @@
 
 A unit base date library for Node.js, Deno and Browser.
 
+# Usage
+
+## npm
+
+```sh
+npm i unit_date
+```
+
+```js
+let { unit } = require('unit_date')
+
+let date = new Date()
+console.log(unit(date, 'months'))
+```
+
+## deno
+
+```ts
+import { unit } from 'https://deno.land/x/unit_date@0.1.1/mod.ts'
+
+let date = new Date()
+console.log(unit(date, 'months'))
+```
+
 # Unit
 
 A unit means the smallest unit of date.
@@ -17,7 +41,7 @@ A unit means the smallest unit of date.
 
 If the units lower than unit of the Date objects are different, `unit_date` treats them as the same even .
 
-# functions
+# Functions
 
 ## `unit()`
 

@@ -1,6 +1,6 @@
 {
   "name": "unit_date",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A unit base date library for Node.js, Deno and Browser.",
   "keywords": [
     "date",
@@ -8,11 +8,11 @@
   ],
   "files": [
     "LICENSE",
-    "unit_date.js",
-    "unit_date.d.ts"
+    "index.js",
+    "index.d.ts"
   ],
-  "module": "unit_date.js",
-  "typings": "unit_date.d.ts",
+  "module": "index.js",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itte1/unit_date.git"

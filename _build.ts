@@ -9,4 +9,13 @@ await esbuild.build({
   minify: true,
   format: 'esm',
 })
+
+await esbuild.build({
+  plugins: [denoPlugin()],
+  entryPoints: ['./mod.ts'],
+  outfile: './index.js',
+  bundle: true,
+  format: 'cjs',
+})
+
 esbuild.stop()
