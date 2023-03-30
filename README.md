@@ -73,6 +73,19 @@ diff(left, right, 'seconds') // => 31,536,000 (=365*24*60*60)
 diff(left, right)            // => 31,536,000,000 (=365*24*60*60*1000)
 ```
 
+## `get()`
+
+```js
+let date = new Date('2023-04-10 13:20:45.364')
+
+get(date).years   // => 2023
+get(date).months  // => 4
+get(date).days    // => 10
+get(date).hours   // => 13
+get(date).minutes // => 20
+get(date).seconds // => 45
+```
+
 ## `set()`
 
 ```js
