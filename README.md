@@ -11,19 +11,19 @@ npm i unit_date
 ```
 
 ```js
-let { unit } = require('unit_date')
-
-let date = new Date()
-console.log(unit(date, 'months'))
+let { unit, ... } = require('unit_date')
 ```
 
 ## deno
 
 ```ts
-import { unit } from 'https://deno.land/x/unit_date@0.1.1/mod.ts'
+import { unit, ... } from 'https://deno.land/x/unit_date@0.2.0/mod.ts'
+```
 
-let date = new Date()
-console.log(unit(date, 'months'))
+## cdn
+
+```ts
+import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.2.0/unit_date.js'
 ```
 
 # Unit
@@ -35,7 +35,7 @@ A unit means the smallest unit of date.
 | years | 2023 |
 | months | 2023-04 |
 | days | 2023-04-12 |
-| hours | 2023-04-12 03 |
+| hours | 2023-04-12 13 |
 | minutes | 2023-04-12 13:20 |
 | seconds | 2023-04-12 13:20:45 |
 
