@@ -3,7 +3,7 @@ function toLocaleDateFormat(date: Date, locales: string | string[] | undefined, 
 }
 
 export function format(date: Date, format = 'YYYY-MM-DDTHH:mm:sszzz', locales?: string | string[] | undefined): string {
-  return format.replace(/y{1,5}|Y{4}|M{1,4}|d{3,4}|D{1,2}|H{1,2}|h{1,4}|m{1,2}|s{1,2}|f{1,3}|X{1,3}/g, m => {
+  return format.replace(/y{1,5}|Y{4}|M{1,4}|d{3,4}|D{1,2}|H{1,2}|h{1,4}|m{1,2}|s{1,2}|f{1,3}|z{1,3}/g, m => {
     switch (m) {
       case 'yy':
       case 'yyyy': return ('0000' + date.getFullYear()).slice(-m.length)
