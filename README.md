@@ -147,3 +147,42 @@ prev(date, { days: 15, hours: 9 }) // => 2023-03-15 09:00:00.000
 prev(date, { days: 5 })            // => 2023-04-05 00:00:00.000
 prev(date, { days: 5 }, 'months')  // => 2023-03-05 00:00:00.000
 ```
+
+## `format()`
+
+```js
+let date = new Date('2023-04-05 13:02:01.064')
+
+format(date) // => 2023-04-10T13:20:45+09:00, etc. (ISO 8601 has time offsets)
+
+format(date, 'yy')   // => 23   (2-digit)
+format(date, 'yyyy') // => 2023 (4-digit)
+format(date, 'YYYY') // => 2023 (full)
+format(date, 'M')    // => 4    (numeric)
+format(date, 'MM')   // => 04   (2-digit)
+format(date, 'MMM')  // => Apr, 4月, etc.
+format(date, 'MMMM') // => April, 4月, etc.
+format(date, 'D')    // => 5    (numeric)
+format(date, 'DD')   // => 05   (2-digit)
+format(date, 'ddd')  // => Mon, 月, etc.
+format(date, 'dddd') // => Monday, 月曜日, etc.
+format(date, 'H')    // => 13   (numeric)
+format(date, 'HH')   // => 13   (2-digit)
+format(date, 'h')    // => 1    (numeric)
+format(date, 'hh')   // => 01   (2-digit)
+format(date, 'hhh')  // => 1 PM, 午後1時, etc.
+format(date, 'hhhh') // => 01 PM, 午後01時, etc.
+format(date, 'm')    // => 2    (numeric)
+format(date, 'mm')   // => 02   (2-digit)
+format(date, 's')    // => 1    (numeric)
+format(date, 'ss')   // => 01   (2-digit)
+format(date, 'f')    // => 0    (1-digit)
+format(date, 'ff')   // => 06   (2-digit)
+format(date, 'fff')  // => 064  (3-digit)
+format(date, 'z')    // => +09
+format(date, 'zz')   // => +0900
+format(date, 'zzz')  // => +09:00
+
+format(date, 'ddd', 'en-US')  // => Mon
+format(date, 'ddd', 'ja-JP')  // => 月
+```
