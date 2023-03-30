@@ -115,6 +115,24 @@ Deno.test('format ss', () => {
   assertEquals(dateText, '06')
 })
 
+Deno.test('format f', () => {
+  let date = new Date(2023, 2, 5, 13, 43, 6, 678)
+  let dateText = format(date, 'f')
+  assertEquals(dateText, '6')
+})
+
+Deno.test('format ff', () => {
+  let date = new Date(2023, 2, 5, 13, 43, 6, 78)
+  let dateText = format(date, 'ff')
+  assertEquals(dateText, '07')
+})
+
+Deno.test('format fff', () => {
+  let date = new Date(2023, 2, 5, 13, 43, 6, 78)
+  let dateText = format(date, 'fff')
+  assertEquals(dateText, '078')
+})
+
 Deno.test('format Japanese', () => {
   let date = new Date(2023, 2, 5, 13, 43, 6, 678)
   let dateText = format(date, 'YYYY年MMMMDD日（ddd）hhhm分s秒', 'ja-JS')

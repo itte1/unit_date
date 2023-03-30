@@ -26,9 +26,9 @@ export function format(date: Date, format = 'YYYY-MM-DDTHH:mm:sszzz', locales?: 
       case 'mm': return ('0' + date.getMinutes()).slice(-2)
       case 's': return date.getSeconds() + ''
       case 'ss': return ('0' + date.getSeconds()).slice(-2)
-      case 'f': return date.getSeconds() + 1 + ''
-      case 'ff': return ('0' + date.getSeconds()).slice(-2)
-      case 'fff': return ('00' + date.getSeconds()).slice(-3)
+      case 'f': return (Math.floor(date.getMilliseconds() / 100) + '')
+      case 'ff': return ('0' + Math.floor(date.getMilliseconds() / 10)).slice(-2)
+      case 'fff': return ('00' + date.getMilliseconds()).slice(-3)
       case 'z':
       case 'zz':
       case 'zzz': {
