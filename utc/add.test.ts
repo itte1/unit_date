@@ -10,117 +10,117 @@ Deno.test('add empty value(unit: none)', () => {
 Deno.test('add plus years(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { years: 10 })
-  assertEquals(newDate.getFullYear(), 2033)
+  assertEquals(newDate.getUTCFullYear(), 2033)
 })
 
 Deno.test('add minus years(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { years: -10 })
-  assertEquals(newDate.getFullYear(), 2013)
+  assertEquals(newDate.getUTCFullYear(), 2013)
 })
 
 Deno.test('add plus months(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { months: 5 })
-  assertEquals(newDate.getMonth(), 7)
+  assertEquals(newDate.getUTCMonth(), 7)
 })
 
 Deno.test('add minus months(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { months: -2 })
-  assertEquals(newDate.getMonth(), 0)
+  assertEquals(newDate.getUTCMonth(), 0)
 })
 
 Deno.test('add plus months carry up(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { months: 10 })
-  assertEquals(newDate.getMonth(), 0)
-  assertEquals(newDate.getFullYear(), 2024)
+  assertEquals(newDate.getUTCMonth(), 0)
+  assertEquals(newDate.getUTCFullYear(), 2024)
 })
 
 Deno.test('add minus months carry down(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { months: -5 })
-  assertEquals(newDate.getMonth(), 9)
-  assertEquals(newDate.getFullYear(), 2022)
+  assertEquals(newDate.getUTCMonth(), 9)
+  assertEquals(newDate.getUTCFullYear(), 2022)
 })
 
 Deno.test('add plus days(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { days: 5 })
-  assertEquals(newDate.getDate(), 23)
+  assertEquals(newDate.getUTCDate(), 23)
 })
 
 Deno.test('add minus days(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { days: -2 })
-  assertEquals(newDate.getDate(), 16)
+  assertEquals(newDate.getUTCDate(), 16)
 })
 
 Deno.test('add plus days carry up(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { days: 15 })
-  assertEquals(newDate.getDate(), 2)
-  assertEquals(newDate.getMonth(), 3)
+  assertEquals(newDate.getUTCDate(), 2)
+  assertEquals(newDate.getUTCMonth(), 3)
 })
 
 Deno.test('add minus days carry down(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { days: -20 })
-  assertEquals(newDate.getDate(), 26)
-  assertEquals(newDate.getMonth(), 1)
+  assertEquals(newDate.getUTCDate(), 26)
+  assertEquals(newDate.getUTCMonth(), 1)
 })
 
 Deno.test('add plus hours(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { hours: 5 })
-  assertEquals(newDate.getHours(), 8)
+  assertEquals(newDate.getUTCHours(), 8)
 })
 
 Deno.test('add minus hours(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { hours: -2 })
-  assertEquals(newDate.getHours(), 1)
+  assertEquals(newDate.getUTCHours(), 1)
 })
 
 Deno.test('add plus hours carry up(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { hours: 25 })
-  assertEquals(newDate.getHours(), 4)
-  assertEquals(newDate.getDate(), 19)
+  assertEquals(newDate.getUTCHours(), 4)
+  assertEquals(newDate.getUTCDate(), 19)
 })
 
 Deno.test('add minus hours carry down(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { hours: -5 })
-  assertEquals(newDate.getHours(), 22)
-  assertEquals(newDate.getDate(), 17)
+  assertEquals(newDate.getUTCHours(), 22)
+  assertEquals(newDate.getUTCDate(), 17)
 })
 
 Deno.test('add plus minutes(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { minutes: 5 })
-  assertEquals(newDate.getMinutes(), 48)
+  assertEquals(newDate.getUTCMinutes(), 48)
 })
 
 Deno.test('add minus minutes(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { minutes: -30 })
-  assertEquals(newDate.getMinutes(), 13)
+  assertEquals(newDate.getUTCMinutes(), 13)
 })
 
 Deno.test('add plus minutes carry up(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { minutes: 20 })
-  assertEquals(newDate.getMinutes(), 3)
-  assertEquals(newDate.getHours(), 4)
+  assertEquals(newDate.getUTCMinutes(), 3)
+  assertEquals(newDate.getUTCHours(), 4)
 })
 
 Deno.test('add minus minutes carry down(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { minutes: -50 })
-  assertEquals(newDate.getMinutes(), 53)
-  assertEquals(newDate.getHours(), 2)
+  assertEquals(newDate.getUTCMinutes(), 53)
+  assertEquals(newDate.getUTCHours(), 2)
 })
 
 Deno.test('add plus seconds(unit: none)', () => {
@@ -139,14 +139,14 @@ Deno.test('add plus seconds carry up(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { seconds: 20 })
   assertEquals(newDate.getSeconds(), 16)
-  assertEquals(newDate.getMinutes(), 44)
+  assertEquals(newDate.getUTCMinutes(), 44)
 })
 
 Deno.test('add minus seconds carry down(unit: none)', () => {
   let date = new Date(2023, 2, 18, 3, 43, 56, 678)
   let newDate = add(date, { seconds: -100 })
   assertEquals(newDate.getSeconds(), 16)
-  assertEquals(newDate.getMinutes(), 42)
+  assertEquals(newDate.getUTCMinutes(), 42)
 })
 
 Deno.test('add empty value(unit: years)', () => {

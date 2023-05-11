@@ -8,21 +8,21 @@ export function get(date: Date, unit: 'minutes'): MinuteDigitDate
 export function get(date: Date, unit: 'seconds'): FullDigitDate
 export function get(date: Date): FullDigitDate
 export function get(date: Date, unit?: DateUnit): AnyDigitDate {
-  let newDate: AnyDigitDate = { years: date.getFullYear() }
+  let newDate: AnyDigitDate = { years: date.getUTCFullYear() }
   switch(unit) {
     default:
       (newDate as FullDigitDate).seconds = date.getSeconds()
     case 'minutes':
-      (newDate as MinuteDigitDate | FullDigitDate).minutes = date.getMinutes()
+      (newDate as MinuteDigitDate | FullDigitDate).minutes = date.getUTCMinutes()
       /* falls through */
     case 'hours':
-      (newDate as HourDigitDate | MinuteDigitDate | FullDigitDate).hours = date.getHours()
+      (newDate as HourDigitDate | MinuteDigitDate | FullDigitDate).hours = date.getUTCHours()
       /* falls through */
     case 'days':
-      (newDate as DayDigitDate | HourDigitDate | MinuteDigitDate | FullDigitDate).days = date.getDate()
+      (newDate as DayDigitDate | HourDigitDate | MinuteDigitDate | FullDigitDate).days = date.getUTCDate()
       /* falls through */
     case 'months':
-      (newDate as MonthDigitDate | DayDigitDate | HourDigitDate | MinuteDigitDate | FullDigitDate).months = date.getMonth() + 1
+      (newDate as MonthDigitDate | DayDigitDate | HourDigitDate | MinuteDigitDate | FullDigitDate).months = date.getUTCMonth() + 1
       /* falls through */
     case 'years':
   }
