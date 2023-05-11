@@ -10,18 +10,18 @@ export function format(date: Date, format = 'YYYY-MM-DDTHH:mm:ssZ', locales?: st
       case 'YYYY': return date.getUTCFullYear() + ''
       case 'M': return date.getUTCMonth() + 1 + ''
       case 'MM': return ('0' + (date.getUTCMonth() + 1)).slice(-2)
-      case 'MMM': return toLocaleDateFormat(date, locales, { month: 'short' })
-      case 'MMMM': return toLocaleDateFormat(date, locales, { month: 'long' })
+      case 'MMM': return toLocaleDateFormat(date, locales, { month: 'short', timeZone: 'UTC' })
+      case 'MMMM': return toLocaleDateFormat(date, locales, { month: 'long', timeZone: 'UTC' })
       case 'D': return date.getUTCDate() + ''
       case 'DD': return ('0' + date.getUTCDate()).slice(-2)
-      case 'ddd': return toLocaleDateFormat(date, locales, { weekday: 'short' })
-      case 'dddd': return toLocaleDateFormat(date, locales, { weekday: 'long' })
+      case 'ddd': return toLocaleDateFormat(date, locales, { weekday: 'short', timeZone: 'UTC' })
+      case 'dddd': return toLocaleDateFormat(date, locales, { weekday: 'long', timeZone: 'UTC' })
       case 'H': return date.getUTCHours() + ''
       case 'HH': return ('0' + date.getUTCHours()).slice(-2)
       case 'h': return (date.getUTCHours() % 12) + ''
       case 'hh': return ('0' + date.getUTCHours() % 12).slice(-2)
-      case 'hhh': return toLocaleDateFormat(date, locales, { hour: 'numeric', hour12: true })
-      case 'hhhh': return toLocaleDateFormat(date, locales, { hour: '2-digit', hour12: true })
+      case 'hhh': return toLocaleDateFormat(date, locales, { hour: 'numeric', hour12: true, timeZone: 'UTC' })
+      case 'hhhh': return toLocaleDateFormat(date, locales, { hour: '2-digit', hour12: true, timeZone: 'UTC' })
       case 'm': return date.getUTCMinutes() + ''
       case 'mm': return ('0' + date.getUTCMinutes()).slice(-2)
       case 's': return date.getSeconds() + ''
