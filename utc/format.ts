@@ -2,7 +2,7 @@ function toLocaleDateFormat(date: Date, locales: string | string[] | undefined, 
   return new Intl.DateTimeFormat(locales as string, options).format(date)
 }
 
-export function format(date: Date, format = 'YYYY-MM-DDTHH:mm:sszzz', locales?: string | string[] | undefined): string {
+export function format(date: Date, format = 'YYYY-MM-DDTHH:mm:ssZ', locales?: string | string[] | undefined): string {
   return format.replace(/y{1,5}|Y{4}|M{1,4}|d{3,4}|D{1,2}|H{1,2}|h{1,4}|m{1,2}|s{1,2}|f{1,3}|z{1,3}/g, m => {
     switch (m) {
       case 'yy':
@@ -29,18 +29,6 @@ export function format(date: Date, format = 'YYYY-MM-DDTHH:mm:sszzz', locales?: 
       case 'f': return (Math.floor(date.getUTCMilliseconds() / 100) + '')
       case 'ff': return ('0' + Math.floor(date.getUTCMilliseconds() / 10)).slice(-2)
       case 'fff': return ('00' + date.getUTCMilliseconds()).slice(-3)
-      case 'z':
-      case 'zz':
-      case 'zzz': {
-        let offset = date.getTimezoneOffset()
-        let sign = offset >= 0 ? '-' : '+'
-        let value = Math.abs(date.getTimezoneOffset())
-        let hours = ('0' + Math.floor(value / 60)).slice(-2)
-        let minutes = ('0' + (value % 60)).slice(-2)
-        return m === 'z' ? sign + hours :
-          m === 'zz' ? sign + hours + minutes :
-          sign + hours + ':' + minutes
-      }
       default: return ''
     }
   })
