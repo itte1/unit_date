@@ -11,7 +11,11 @@
     "index.js",
     "index.d.ts",
     "unit_date.js",
-    "unit_date.d.ts"
+    "unit_date.d.ts",
+    "utc/index.js",
+    "utc/index.d.ts",
+    "utc/unit_date.js",
+    "utc/unit_date.d.ts"
   ],
   "module": "unit_date.js",
   "typings": "unit_date.d.ts",
