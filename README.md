@@ -17,13 +17,13 @@ let { unit, ... } = require('unit_date')
 ## deno
 
 ```ts
-import { unit, ... } from 'https://deno.land/x/unit_date@0.2.0/mod.ts'
+import { unit, ... } from 'https://deno.land/x/unit_date@0.3.0/mod.ts'
 ```
 
 ## cdn
 
 ```ts
-import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.2.0/unit_date.js'
+import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.3.0/unit_date.js'
 ```
 
 # Unit
@@ -198,4 +198,26 @@ format(date, 'zzz')  // => +09:00
 
 format(date, 'ddd', 'en-US')  // => Mon
 format(date, 'ddd', 'ja-JP')  // => 月
+```
+
+# UTC
+
+Import UTC functions.
+
+## npm
+
+```js
+let { unit, ... } = require('unit_date/utc')
+```
+
+## deno
+
+```ts
+import { unit, ... } from 'https://deno.land/x/unit_date@0.3.0/utc/mod.ts'
+```
+
+## cdn
+
+```ts
+import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.3.0/utc/unit_date.js'
 ```
