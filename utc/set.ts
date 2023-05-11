@@ -22,7 +22,7 @@ export function set(date: Date, value: DateObject, unit?: DateUnit): Date {
       'years' in value && newDate.setUTCFullYear(value.years as number)
   }
   if ('days' in value && ['days', 'hours', 'minutes', 'seconds', undefined].includes(unit)) {
-    let endOfThisMonth = new Date(newDate.getUTCFullYear(), newDate.getUTCMonth() + 1, 0)
+    let endOfThisMonth = new Date(Date.UTC(newDate.getUTCFullYear(), newDate.getUTCMonth() + 1, 0))
     newDate.setUTCDate(Math.max(1, Math.min(value.days as number, endOfThisMonth.getUTCDate()))) // 翌月の〇日
   }
 
