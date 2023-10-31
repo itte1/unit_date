@@ -1,6 +1,6 @@
 {
   "name": "unit_date",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A unit base date library for Node.js, Deno and Browser.",
   "keywords": [
     "date",

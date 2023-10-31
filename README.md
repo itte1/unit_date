@@ -17,13 +17,13 @@ let { unit, ... } = require('unit_date')
 ## deno
 
 ```ts
-import { unit, ... } from 'https://deno.land/x/unit_date@0.3.0/mod.ts'
+import { unit, ... } from 'https://deno.land/x/unit_date@0.3.1/mod.ts'
 ```
 
 ## cdn
 
 ```ts
-import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.3.0/unit_date.js'
+import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.3.1/unit_date.js'
 ```
 
 # Unit
@@ -213,11 +213,11 @@ let { unit, ... } = require('unit_date/utc')
 ## deno
 
 ```ts
-import { unit, ... } from 'https://deno.land/x/unit_date@0.3.0/utc/mod.ts'
+import { unit, ... } from 'https://deno.land/x/unit_date@0.3.1/utc/mod.ts'
 ```
 
 ## cdn
 
 ```ts
-import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.3.0/utc/unit_date.js'
+import { unit, ... } from 'https://cdn.jsdelivr.net/npm/unit_date@0.3.1/utc/unit_date.js'
 ```
