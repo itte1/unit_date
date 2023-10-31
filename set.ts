@@ -3,6 +3,13 @@ import { unit as _unit } from './unit.ts'
 
 export function set(date: Date, value: DateObject, unit?: DateUnit): Date {
   let newDate = _unit(date, unit)
+  let days =
+    ('days' in value && ['days', 'hours', 'minutes', 'seconds', undefined].includes(unit)) ? value.days as number :
+    ('months' in value || 'years' in value) ? newDate.getDate() :
+    null
+  if (days !== null) {
+    newDate.setDate(1)
+  }
   switch (unit) {
     default:
     case 'seconds':
@@ -21,9 +28,9 @@ export function set(date: Date, value: DateObject, unit?: DateUnit): Date {
     case 'years':
       'years' in value && newDate.setFullYear(value.years as number)
   }
-  if ('days' in value && ['days', 'hours', 'minutes', 'seconds', undefined].includes(unit)) {
+  if (days !== null) {
     let endOfThisMonth = new Date(newDate.getFullYear(), newDate.getMonth() + 1, 0)
-    newDate.setDate(Math.max(1, Math.min(value.days as number, endOfThisMonth.getDate()))) // 翌月の〇日
+    newDate.setDate(Math.max(1, Math.min(days as number, endOfThisMonth.getDate()))) // 翌月の〇日
   }
 
   return newDate

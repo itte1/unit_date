@@ -214,3 +214,15 @@ Deno.test('set integer(unit: seconds)', () => {
   let newDate = set(date, { years: 2033, months: 4, days: 16, hours: 13, minutes: 16, seconds: 12 }, 'seconds')
   assertEquals(newDate.getTime(), new Date(2033, 3, 16, 13, 16, 12).getTime())
 })
+
+Deno.test('set month from 31(unit: none)', () => {
+  let date = new Date(2023, 9, 31, 15, 1, 0, 0)
+  let newDate = set(date, { months: 11 })
+  assertEquals(newDate.getMonth(), 10)
+})
+
+Deno.test('set month from leap year(unit: none)', () => {
+  let date = new Date(2024, 1, 29, 15, 1, 0, 0)
+  let newDate = set(date, { years: 2025 })
+  assertEquals(newDate.getMonth(), 1)
+})
