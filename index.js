@@ -71,6 +71,10 @@ function get(date, unit2) {
 // set.ts
 function set(date, value, unit2) {
   let newDate = unit(date, unit2);
+  let days = "days" in value && ["days", "hours", "minutes", "seconds", void 0].includes(unit2) ? value.days : "months" in value || "years" in value ? newDate.getDate() : null;
+  if (days !== null) {
+    newDate.setDate(1);
+  }
   switch (unit2) {
     default:
     case "seconds":
@@ -85,9 +89,9 @@ function set(date, value, unit2) {
     case "years":
       "years" in value && newDate.setFullYear(value.years);
   }
-  if ("days" in value && ["days", "hours", "minutes", "seconds", void 0].includes(unit2)) {
+  if (days !== null) {
     let endOfThisMonth = new Date(newDate.getFullYear(), newDate.getMonth() + 1, 0);
-    newDate.setDate(Math.max(1, Math.min(value.days, endOfThisMonth.getDate())));
+    newDate.setDate(Math.max(1, Math.min(days, endOfThisMonth.getDate())));
   }
   return newDate;
 }
